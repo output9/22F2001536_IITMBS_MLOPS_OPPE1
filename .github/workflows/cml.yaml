@@ -19,13 +19,7 @@ jobs:
           python-version: "3.10"
 
       - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y python3-dev build-essential
-          pip install --upgrade pip wheel setuptools
-          pip install --only-binary=:all: pandas
-          pip install dvc[gs] feast scikit-learn matplotlib joblib pytest cml
-
+        run: pip install -r requirements.txt
       - name: Pull data & apply features
         run: |
           dvc pull
