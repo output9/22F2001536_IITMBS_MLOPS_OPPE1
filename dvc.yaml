@@ -1,0 +1,25 @@
+stages:
+  preprocess:
+    cmd: python scripts/data_processing.py
+    deps:
+      - scripts/data_processing.py
+      - data/raw
+    outs:
+      - data/processed
+
+  features:
+    cmd: python scripts/feature_generation.py
+    deps:
+      - scripts/feature_generation.py
+      - data/processed
+    outs:
+      - data/processed/dataset_versions/v1/features_v0_sample_100.parquet
+
+  train:
+    cmd: python scripts/train_model.py
+    deps:
+      - scripts/train_model.py
+      - data/processed/dataset_versions/v1/features_v0_sample_100.parquet
+    outs:
+      - outputs/model_v0.pkl
+      - outputs/metrics.txt
