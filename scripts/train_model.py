@@ -35,8 +35,8 @@ f1 = f1_score(y_test, y_pred)
 
 os.makedirs("outputs", exist_ok=True)
 with open("outputs/metrics.txt", "w") as f:
-    f.write(f"R2: {r2:.4f}\nMAE: {mae:.4f}\n")
+    f.write(f"R2: {acc:.4f}\nMAE: {f1:.4f}\n")
 
 # Save model
 joblib.dump(model, "outputs/model_v0.pkl")
-print("✅ Model trained and saved. R2:", r2, "MAE:", mae)
+print("✅ Model trained and saved. accuracy:", acc, "f1", f1)
