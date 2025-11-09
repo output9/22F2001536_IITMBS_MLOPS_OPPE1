@@ -20,8 +20,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
-          pip install dvc[gs] feast scikit-learn matplotlib joblib pytest
+          sudo apt-get update
+          sudo apt-get install -y python3-dev build-essential
+          pip install --upgrade pip wheel setuptools
+          pip install --only-binary=:all: pandas
+          pip install dvc[gs] feast scikit-learn matplotlib joblib pytest cml
 
       - name: Pull data & apply features
         run: |
