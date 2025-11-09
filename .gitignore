@@ -3,7 +3,7 @@
 
 # Allow directories
 !*/
-# Allow key files at repo root
+# Allow key root files
 !dvc.yaml
 !dvc.lock
 !.dvc/
@@ -21,9 +21,15 @@
 !feature_repo/
 !outputs/
 
-# Local/generated noise
+# Local/generated
 data/registry.db
 **/__pycache__/
 **/*.pyc
 **/.ipynb_checkpoints/
 .DS_Store
+# Never track home config/workspace files
+.config/
+.jupyter/
+.local/
+.npm/
+.ipython/
