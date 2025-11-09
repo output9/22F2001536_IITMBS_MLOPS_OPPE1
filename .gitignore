@@ -1,23 +1,28 @@
 # Ignore everything by default
 /*
 
-# Allow project dirs/files
+# Allow directories
+!*/
+# Allow key files at repo root
+!dvc.yaml
+!dvc.lock
+!.dvc/
+!.dvcignore
+!requirements.txt
+!requirements.ci.txt
+!.github/
+!README.md
+!.gitignore
+
+# Allow project trees
 !data/
 !scripts/
 !tests/
 !feature_repo/
 !outputs/
-!.github/
-!requirements.txt
-!requirements.ci.txt
-!dvc.yaml
-!README.md
-!.gitignore
 
-# Inside data/, ignore Feast local registry (it’s generated)
+# Local/generated noise
 data/registry.db
-
-# Common noise inside allowed dirs
 **/__pycache__/
 **/*.pyc
 **/.ipynb_checkpoints/
