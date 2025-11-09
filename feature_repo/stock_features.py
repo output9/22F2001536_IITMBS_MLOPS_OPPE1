@@ -1,14 +1,14 @@
 from pathlib import Path
 from feast import Entity, FileSource, FeatureView, Field
-from feast.types import Float32, Int64
+from feast.types import Float32, Int64, String  # String for Entity value_type
 
-# Resolve project root: feature_repo/.. -> repo root
 ROOT = Path(__file__).resolve().parent.parent
 features_path = str(ROOT / "data/processed/dataset_versions/v1/features_v0_sample_100.parquet")
 
 stock_entity = Entity(
     name="stock_symbol",
     join_keys=["stock_symbol"],
+    value_type=String,   # <-- add this
 )
 
 source = FileSource(
