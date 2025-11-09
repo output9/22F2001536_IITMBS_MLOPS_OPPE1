@@ -1,0 +1,24 @@
+# Ignore everything by default
+/*
+
+# Allow project dirs/files
+!data/
+!scripts/
+!tests/
+!feature_repo/
+!outputs/
+!.github/
+!requirements.txt
+!requirements.ci.txt
+!dvc.yaml
+!README.md
+!.gitignore
+
+# Inside data/, ignore Feast local registry (it’s generated)
+data/registry.db
+
+# Common noise inside allowed dirs
+**/__pycache__/
+**/*.pyc
+**/.ipynb_checkpoints/
+.DS_Store
