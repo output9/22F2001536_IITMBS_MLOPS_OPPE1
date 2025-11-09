@@ -1,0 +1,8 @@
+project: stock_analytica
+registry: ../data/registry.db
+provider: local
+offline_store:
+  type: file
+online_store:
+  type: sqlite
+
