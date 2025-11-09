@@ -1,0 +1,9 @@
+pandas
+numpy
+scikit-learn
+dvc[gcs]
+feast
+joblib
+cml
+pyyaml
+pyarrow
